@@ -22,7 +22,6 @@ instance = dht11.DHT11(pin = 4)
 #creating and opening a text file 'temp.txt' for writing temp and humidity
 f1=open("temp.txt","w")
 result = instance.read()
-x=0
 
 # Create the I2C interface.
 i2c = busio.I2C(SCL, SDA)
