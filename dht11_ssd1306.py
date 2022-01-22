@@ -1,5 +1,4 @@
 
-import time
 import subprocess
 from board import SCL, SDA
 import busio
