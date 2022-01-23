@@ -12,11 +12,8 @@ import datetime
 
 # initialize GPIO
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-# iniatilize an optional led at gpio 16 to indicate when the sensor is taking input. commentout otherwise
-GPIO.setup(16,GPIO.OUT)
-# read data using pin 14
 
+# read data using pin 14
 instance = dht11.DHT11(pin = 4)
 #creating and opening a text file 'temp.txt' for writing temp and humidity
 f1=open("temp.txt","w")
@@ -65,9 +62,6 @@ while True:
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    
-    
-    #draw.text((x, top + 0), "TIME"+str(datetime.datetime.now()),font=font, fill=255)
     draw.text((x, top + 0), "Temp:"+ str(result.temperature) , font=font, fill=255)
     draw.text((x, top + 15), "Humidity: " +str(result.humidity), font=font, fill=255)
 
