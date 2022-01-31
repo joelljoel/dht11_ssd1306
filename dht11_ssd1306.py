@@ -15,7 +15,7 @@ GPIO.setwarnings(False)
 
 # read data using pin 14
 instance = dht11.DHT11(pin = 4)
-result = instance.read()
+
 
 # Create the I2C interface.
 i2c = busio.I2C(SCL, SDA)
@@ -59,6 +59,7 @@ font = ImageFont.load_default()
 while True:
 
     # Draw a black filled box to clear the image.
+    result = instance.read()
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     draw.text((x, top + 0), "Temp:"+ str(result.temperature) , font=font, fill=255)
     draw.text((x, top + 15), "Humidity: " +str(result.humidity), font=font, fill=255)
@@ -67,7 +68,7 @@ while True:
     # Display image.
     disp.image(image)
     disp.show()
-    time.sleep(0.1)
+    time.sleep(2)
 
 
 
